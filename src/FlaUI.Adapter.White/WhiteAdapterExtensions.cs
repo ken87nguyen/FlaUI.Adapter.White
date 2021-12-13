@@ -46,9 +46,14 @@ namespace FlaUI.Adapter.White
             return foundElement;
         }
 
-        public static void KeyIn(this AutomationElement element, VirtualKeyShort key)
+        public static void Enter<T>(this T element, string text)
         {
-            Keyboard.Type(key);
+            Keyboard.Type(text);
+        }
+
+        public static void KeyIn<T>(this T element, VirtualKeyShort key)
+        {
+            Keyboard.Press(key);
         }
 
         public static Window ModalWindow(this Window parent, string title)
@@ -70,6 +75,11 @@ namespace FlaUI.Adapter.White
         public static ListBox UnCheck(this ListBox listBox, string itemText)
         {
             return listBox.SetCheck(itemText, false);
+        }
+
+        public static bool Enabled(this AutomationElement automationElement)
+        {
+            return automationElement.IsEnabled;
         }
 
         private static ListBox SetCheck(this ListBox listBox, string itemText, bool isChecked)
