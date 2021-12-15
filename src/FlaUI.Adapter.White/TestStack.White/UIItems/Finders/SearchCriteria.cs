@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using FlaUI.Adapter.White;
+using FlaUI.Adapter.White.Converters;
 using FlaUI.Core.Conditions;
 using FlaUI.Core.Definitions;
 using FlaUI.Core.Identifiers;
@@ -56,6 +57,13 @@ namespace TestStack.White.UIItems.Finders
         {
             return new SearchCriteria(ConditionFactory.ByControlType(controlType));
         }
+
+#if !NETSTANDARD
+        public static SearchCriteria ByControlType(System.Windows.Automation.ControlType controlType)
+        {
+            return new SearchCriteria(ConditionFactory.ByControlType((ControlType)FlaUIControlTypeConverter.ToFlaUIControlType(controlType)));
+        }
+#endif
 
         public static SearchCriteria ByNativeProperty(PropertyId automationProperty, string value)
         {

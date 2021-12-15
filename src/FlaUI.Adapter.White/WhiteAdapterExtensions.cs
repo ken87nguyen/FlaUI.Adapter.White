@@ -1,11 +1,11 @@
 ﻿using System.Linq;
-using FlaUI.Adapter.White;
-using FlaUI.Core;
+using FlaUI.Adapter.White.TestStack.White;
 using FlaUI.Core.AutomationElements;
 using FlaUI.Core.Conditions;
 using FlaUI.Core.Definitions;
 using FlaUI.Core.Input;
 using FlaUI.Core.WindowsAPI;
+using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
 using TestStack.White.WindowsAPI;
 
@@ -26,6 +26,11 @@ namespace TestStack.White
         public static T Get<T>(this AutomationElement element, ConditionBase condition) where T : AutomationElement
         {
             return Get(element, condition).As<T>();
+        }
+
+        public static T Get<T>(this AutomationElement element) where T : AutomationElement
+        {
+            return Get(element, SearchCriteria.All).As<T>();
         }
 
         public static AutomationElement Get(this AutomationElement element, SearchCriteria searchCriteria)
@@ -64,16 +69,20 @@ namespace TestStack.White
             Keyboard.Press((VirtualKeyShort)key);
         }
 
-
         public static UIItems.WindowItems.Window ModalWindow(this UIItems.WindowItems.Window parent, string title)
         {
             var cf = parent.ConditionFactory;
             return parent.FindFirstDescendant(cf.ByControlType(ControlType.Window).And(cf.ByName(title))).AsWindow() as UIItems.WindowItems.Window;
         }
 
-        public static UIItems.WindowItems.Window GetWindow(this Application application, string title)
+        public static UIItems.WindowItems.Window ModalWindow(this UIItems.WindowItems.Window parent, SearchCriteria searchCriteria)
         {
-            return application.GetAllTopLevelWindows(WhiteAdapter.Automation).FirstOrDefault(x => x.Title == title) as UIItems.WindowItems.Window;
+            return parent.Get(searchCriteria.ToCondition()).AsWindow() as UIItems.WindowItems.Window;
+        }
+
+        public static UIItemContainer MdiChild(this UIItems.WindowItems.Window parent, SearchCriteria searchCriteria)
+        {
+            return parent.Get(searchCriteria) as UIItemContainer;
         }
 
         public static ListBox Check(this ListBox listBox, string itemText)

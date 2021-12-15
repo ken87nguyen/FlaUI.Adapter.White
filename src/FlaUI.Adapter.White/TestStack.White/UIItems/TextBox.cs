@@ -7,5 +7,9 @@ namespace TestStack.White.UIItems
         public TextBox(FrameworkAutomationElementBase frameworkAutomationElement) : base(frameworkAutomationElement)
         {
         }
+
+        public bool IsFocussed => false; // TODO: HYT 2021.12.15
+
+        public bool Enabled => IsEnabled;
     }
 }

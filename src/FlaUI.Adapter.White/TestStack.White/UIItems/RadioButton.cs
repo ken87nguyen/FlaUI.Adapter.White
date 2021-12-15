@@ -7,5 +7,12 @@ namespace TestStack.White.UIItems
         public RadioButton(FrameworkAutomationElementBase frameworkAutomationElement) : base(frameworkAutomationElement)
         {
         }
+
+        public bool IsSelected => IsChecked;
+
+        public void Select()
+        {
+            Click();
+        }
     }
 }

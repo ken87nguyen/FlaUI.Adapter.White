@@ -12,7 +12,9 @@ namespace TestStack.White.WindowsAPI
             BACKSPACE = VirtualKeyShort.BACK,
             TAB = VirtualKeyShort.TAB,
             DOWN = VirtualKeyShort.DOWN,
-            RETURN = VirtualKeyShort.RETURN
+            RETURN = VirtualKeyShort.RETURN,
+            RIGHT = VirtualKeyShort.RIGHT,
+            ESCAPE = VirtualKeyShort.ESCAPE
         }
     }
 }

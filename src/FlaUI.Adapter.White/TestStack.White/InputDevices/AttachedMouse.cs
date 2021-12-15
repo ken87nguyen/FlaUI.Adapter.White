@@ -1,33 +1,33 @@
-﻿using System.Drawing;
-using FlaUI.Core.Input;
-using TestStack.White.UIItems;
+﻿using TestStack.White.UIItems.WindowItems;
 
 namespace TestStack.White.InputDevices
 {
     public class AttachedMouse
     {
-        private readonly UIItemContainer container;
+        private readonly Window container;
 
-        internal AttachedMouse(UIItemContainer container)
+        internal AttachedMouse(Window container)
         {
             this.container = container;
         }
 
         // For WPF
-        public void Click(double x, double y)
+#if !NETSTANDARD
+        public void Click(System.Windows.Point clickPoint)
         {
-            Mouse.LeftClick(new Point((int)x, (int)y));
+            FlaUI.Core.Input.Mouse.LeftClick(new System.Drawing.Point((int)clickPoint.X, (int)clickPoint.Y));
         }
+#endif
 
         // for Window form
-        public void Click(Point clickPoint)
+        public void Click(System.Drawing.Point clickPoint)
         {
-            Mouse.LeftClick(clickPoint);
+            FlaUI.Core.Input.Mouse.LeftClick(clickPoint);
         }
 
-        public void DoubleClick(Point clickPoint)
+        public void DoubleClick(System.Drawing.Point clickPoint)
         {
-            Mouse.DoubleClick(clickPoint);
+            FlaUI.Core.Input.Mouse.DoubleClick(clickPoint);
         }
     }
 }

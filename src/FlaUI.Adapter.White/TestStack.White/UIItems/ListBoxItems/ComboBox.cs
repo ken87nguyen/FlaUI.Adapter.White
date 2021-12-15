@@ -9,5 +9,7 @@ namespace TestStack.White.UIItems.ListBoxItems
         }
 
         public bool Enabled => IsEnabled;
+
+        public string SelectedItemText => SelectedItem.Text;
     }
 }

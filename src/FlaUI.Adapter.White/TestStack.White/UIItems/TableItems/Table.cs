@@ -1,4 +1,5 @@
-﻿using FlaUI.Core;
+﻿using System.Collections.Generic;
+using FlaUI.Core;
 using FlaUI.Core.AutomationElements;
 
 namespace TestStack.White.UIItems.TableItems
@@ -9,6 +10,8 @@ namespace TestStack.White.UIItems.TableItems
         {
         }
 
-        public new TableRows[] Rows => Rows;
+        public bool Enabled => IsEnabled;
+
+        public new List<TableRows> Rows => Rows;
     }
 }
