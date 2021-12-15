@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FlaUI.Core.AutomationElements;
 
-namespace FlaUI.Adapter.White
+namespace TestStack.White.AutomationElementSearch
 {
     public class AutomationElementFinder
     {

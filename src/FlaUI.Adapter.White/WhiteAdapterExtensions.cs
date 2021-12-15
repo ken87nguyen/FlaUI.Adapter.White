@@ -1,12 +1,15 @@
 ﻿using System.Linq;
+using FlaUI.Adapter.White;
 using FlaUI.Core;
 using FlaUI.Core.AutomationElements;
 using FlaUI.Core.Conditions;
 using FlaUI.Core.Definitions;
 using FlaUI.Core.Input;
 using FlaUI.Core.WindowsAPI;
+using TestStack.White.UIItems.Finders;
+using TestStack.White.WindowsAPI;
 
-namespace FlaUI.Adapter.White
+namespace TestStack.White
 {
     public static class WhiteAdapterExtensions
     {
@@ -51,20 +54,26 @@ namespace FlaUI.Adapter.White
             Keyboard.Type(text);
         }
 
-        public static void KeyIn<T>(this T element, VirtualKeyShort key)
+        public static void KeyIn<T>(this T element, KeyboardInput.SpecialKeys key)
         {
-            Keyboard.Press(key);
+            Keyboard.Press((VirtualKeyShort)key);
         }
 
-        public static Window ModalWindow(this Window parent, string title)
+        public static void PressSpecialKey<T>(this T element, KeyboardInput.SpecialKeys key)
+        {
+            Keyboard.Press((VirtualKeyShort)key);
+        }
+
+
+        public static UIItems.WindowItems.Window ModalWindow(this UIItems.WindowItems.Window parent, string title)
         {
             var cf = parent.ConditionFactory;
-            return parent.FindFirstDescendant(cf.ByControlType(ControlType.Window).And(cf.ByName(title))).AsWindow();
+            return parent.FindFirstDescendant(cf.ByControlType(ControlType.Window).And(cf.ByName(title))).AsWindow() as UIItems.WindowItems.Window;
         }
 
-        public static Window GetWindow(this Application application, string title)
+        public static UIItems.WindowItems.Window GetWindow(this Application application, string title)
         {
-            return application.GetAllTopLevelWindows(WhiteAdapter.Automation).FirstOrDefault(x => x.Title == title);
+            return application.GetAllTopLevelWindows(WhiteAdapter.Automation).FirstOrDefault(x => x.Title == title) as UIItems.WindowItems.Window;
         }
 
         public static ListBox Check(this ListBox listBox, string itemText)
@@ -75,11 +84,6 @@ namespace FlaUI.Adapter.White
         public static ListBox UnCheck(this ListBox listBox, string itemText)
         {
             return listBox.SetCheck(itemText, false);
-        }
-
-        public static bool Enabled(this AutomationElement automationElement)
-        {
-            return automationElement.IsEnabled;
         }
 
         private static ListBox SetCheck(this ListBox listBox, string itemText, bool isChecked)

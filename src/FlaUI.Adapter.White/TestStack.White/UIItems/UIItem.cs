@@ -1,7 +1,7 @@
 ﻿using FlaUI.Core;
 using FlaUI.Core.AutomationElements;
 
-namespace FlaUI.Adapter.White
+namespace TestStack.White.UIItems
 {
     public class UIItem : AutomationElement
     {
@@ -9,8 +9,6 @@ namespace FlaUI.Adapter.White
         {
         }
 
-        public UIItem(AutomationElement automationElement) : base(automationElement)
-        {
-        }
+        public bool Enabled => IsEnabled;
     }
 }

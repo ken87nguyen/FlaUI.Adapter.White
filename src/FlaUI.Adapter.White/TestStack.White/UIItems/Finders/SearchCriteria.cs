@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using FlaUI.Adapter.White;
 using FlaUI.Core.Conditions;
 using FlaUI.Core.Definitions;
 using FlaUI.Core.Identifiers;
 
-namespace FlaUI.Adapter.White
+namespace TestStack.White.UIItems.Finders
 {
     public class SearchCriteria
     {
