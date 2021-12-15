@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using FlaUI.Adapter.White.TestStack.White;
 using FlaUI.Core.AutomationElements;
 using FlaUI.Core.Conditions;
 using FlaUI.Core.Definitions;
