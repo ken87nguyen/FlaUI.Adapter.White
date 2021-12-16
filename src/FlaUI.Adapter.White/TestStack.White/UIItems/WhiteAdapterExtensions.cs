@@ -1,14 +1,14 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using FlaUI.Core.AutomationElements;
 using FlaUI.Core.Conditions;
 using FlaUI.Core.Definitions;
 using FlaUI.Core.Input;
 using FlaUI.Core.WindowsAPI;
-using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
 using TestStack.White.WindowsAPI;
 
-namespace TestStack.White
+namespace TestStack.White.UIItems
 {
     public static class WhiteAdapterExtensions
     {
@@ -53,6 +53,11 @@ namespace TestStack.White
             return foundElement;
         }
 
+        public static bool Exists<T>(this AutomationElement element, string name) where T : AutomationElement
+        {
+            return Get<T>(element, element.ConditionFactory.ByName(name)) != null;
+        }
+
         public static void Enter<T>(this T element, string text)
         {
             Keyboard.Type(text);
@@ -66,6 +71,24 @@ namespace TestStack.White
         public static void PressSpecialKey<T>(this T element, KeyboardInput.SpecialKeys key)
         {
             Keyboard.Press((VirtualKeyShort)key);
+        }
+
+        public static void HoldKey<T>(this T element, KeyboardInput.SpecialKeys key)
+        {
+            // TODO HYT 2021.12.15
+            Keyboard.Press((VirtualKeyShort)key);
+        }
+
+        public static void LeaveKey<T>(this T element, KeyboardInput.SpecialKeys key)
+        {
+            // TODO HYT 2021.12.15
+            Keyboard.Release((VirtualKeyShort)key);
+        }
+
+        public static List<WindowItems.Window> GetWindows(this Application application)
+        {
+            // TODO
+            return null;
         }
 
         public static UIItems.WindowItems.Window ModalWindow(this UIItems.WindowItems.Window parent, string title)

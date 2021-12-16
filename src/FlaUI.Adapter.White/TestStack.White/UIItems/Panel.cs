@@ -12,5 +12,7 @@ namespace TestStack.White.UIItems
         public Panel(AutomationElement automationElement) : base(automationElement)
         {
         }
+
+        public bool Visible => base.IsAvailable;
     }
 }

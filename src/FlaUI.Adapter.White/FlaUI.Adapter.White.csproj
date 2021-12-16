@@ -31,8 +31,4 @@
     <None Include="..\..\LICENSE.txt" Pack="true" PackagePath="" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="TestStack.White\UIItems\MenuItems\" />
-  </ItemGroup>
-
 </Project>

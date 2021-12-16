@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using FlaUI.Adapter.White;
 using FlaUI.Adapter.White.Converters;
+using FlaUI.Adapter.White.UIItems;
 using FlaUI.Core.Conditions;
 using FlaUI.Core.Definitions;
 using FlaUI.Core.Identifiers;

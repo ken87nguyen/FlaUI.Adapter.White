@@ -11,6 +11,8 @@ namespace TestStack.White.UIItems.TableItems
         {
         }
 
+        public bool IsFocussed => false; // TODO HYT 2021.12.15
+
         public Rectangle Bounds => BoundingRectangle;
     }
 }

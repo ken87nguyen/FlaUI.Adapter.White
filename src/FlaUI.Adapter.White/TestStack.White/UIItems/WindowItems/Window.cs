@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Linq;
 using FlaUI.Core;
 using TestStack.White.InputDevices;
+using TestStack.White.UIItems.WindowStripControls;
 
 namespace TestStack.White.UIItems.WindowItems
 {
@@ -11,6 +12,9 @@ namespace TestStack.White.UIItems.WindowItems
         public Window(FrameworkAutomationElementBase frameworkAutomationElement) : base(frameworkAutomationElement)
         {
         }
+
+        // TODO HYT 2021.12.15
+        public MenuBar MenuBar { get; set; }
 
         public List<Window> ModalWindows()
         {
@@ -36,5 +40,21 @@ namespace TestStack.White.UIItems.WindowItems
         {
             get { return new AttachedMouse(this); }
         }
+
+        public bool IsOffScreen => base.IsOffscreen;
+
+        public bool IsCurrentlyActive => base.IsAvailable;
+
+        public void WaitWhileBusy()
+        {
+            // TODO
+        }
+
+        public void ReloadIfCached()
+        {
+            // TODO
+        }
+
+        public bool Visible => base.IsAvailable;
     }
 }

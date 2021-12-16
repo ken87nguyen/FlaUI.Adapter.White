@@ -7,5 +7,10 @@ namespace TestStack.White.UIItems.TabItems
         public Tab(FrameworkAutomationElementBase frameworkAutomationElement) : base(frameworkAutomationElement)
         {
         }
+
+        public void SelectTabPage(string tabName)
+        {
+            // TODO HYT 2021.12.15
+        }
     }
 }

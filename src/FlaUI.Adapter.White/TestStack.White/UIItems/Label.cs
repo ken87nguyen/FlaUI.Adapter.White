@@ -7,5 +7,7 @@ namespace TestStack.White.UIItems
         public Label(FrameworkAutomationElementBase frameworkAutomationElement) : base(frameworkAutomationElement)
         {
         }
+
+        public bool Visible => base.IsAvailable;
     }
 }

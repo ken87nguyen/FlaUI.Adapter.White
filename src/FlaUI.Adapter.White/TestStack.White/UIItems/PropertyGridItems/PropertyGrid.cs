@@ -1,6 +1,7 @@
-﻿using FlaUI.Core;
-using FlaUI.Core.AutomationElements;
+﻿using System.Collections.Generic;
+using FlaUI.Core;
 using TestStack.White.UIItems.Finders;
+using AutomationElement = FlaUI.Core.AutomationElements.AutomationElement;
 
 namespace TestStack.White.UIItems.PropertyGridItems
 {
@@ -19,5 +20,16 @@ namespace TestStack.White.UIItems.PropertyGridItems
             // TODO: HYT 2021.12.15
             return this;
         }
+
+        /// <summary>
+        /// TODO HYT 2021.12.15
+        /// Provides a list of categories in the property grid.
+        /// </summary>
+        public virtual List<PropertyGridCategory> Categories
+        {
+            get => null;
+        }
+
+        public bool Enabled => IsEnabled;
     }
 }

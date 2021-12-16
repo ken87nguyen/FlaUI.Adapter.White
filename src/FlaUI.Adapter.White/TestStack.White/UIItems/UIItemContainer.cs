@@ -1,4 +1,5 @@
-﻿using FlaUI.Core;
+﻿using System.Drawing;
+using FlaUI.Core;
 
 namespace TestStack.White.UIItems
 {
@@ -7,5 +8,6 @@ namespace TestStack.White.UIItems
         public UIItemContainer(FrameworkAutomationElementBase frameworkAutomationElement) : base(frameworkAutomationElement)
         {
         }
+        public Bitmap VisibleImage => null; // TODO
     }
 }

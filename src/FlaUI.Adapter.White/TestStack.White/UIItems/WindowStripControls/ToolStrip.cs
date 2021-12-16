@@ -1,16 +1,25 @@
 ﻿using FlaUI.Core;
-using FlaUI.Core.AutomationElements;
-
 namespace TestStack.White.UIItems.WindowStripControls
 {
-    public class ToolStrip : AutomationElement
+    public class ToolStrip : FlaUI.Core.AutomationElements.AutomationElement
     {
         public ToolStrip(FrameworkAutomationElementBase frameworkAutomationElement) : base(frameworkAutomationElement)
         {
         }
 
-        public ToolStrip(AutomationElement automationElement) : base(automationElement)
+        public ToolStrip(FlaUI.Core.AutomationElements.AutomationElement automationElement) : base(automationElement)
         {
+        }
+        public MenuItems.Menu MenuItem(params string[] path)
+        {
+            // TODO HYT 2021.12.15
+            return null;
+        }
+
+        public Label GetLabel(string automationId)
+        {
+            // TODO HYT 2021.12.15
+            return null;
         }
     }
 }

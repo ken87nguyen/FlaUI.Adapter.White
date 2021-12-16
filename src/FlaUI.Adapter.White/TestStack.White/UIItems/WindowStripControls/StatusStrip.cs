@@ -12,5 +12,11 @@ namespace TestStack.White.UIItems.WindowStripControls
         public StatusStrip(AutomationElement automationElement) : base(automationElement)
         {
         }
+
+        public Label GetLabel(string automationId)
+        {
+            // TODO HYT 2021.12.15
+            return null;
+        }
     }
 }

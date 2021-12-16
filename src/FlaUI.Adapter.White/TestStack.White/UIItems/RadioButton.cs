@@ -8,7 +8,11 @@ namespace TestStack.White.UIItems
         {
         }
 
-        public bool IsSelected => IsChecked;
+        public bool IsSelected
+        {
+            get => base.IsChecked;
+            set => base.IsChecked = value;
+        }
 
         public void Select()
         {

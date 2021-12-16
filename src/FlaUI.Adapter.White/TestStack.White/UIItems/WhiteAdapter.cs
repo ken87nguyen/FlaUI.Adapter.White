@@ -1,7 +1,7 @@
 ﻿using FlaUI.Core;
 using FlaUI.Core.Conditions;
 
-namespace FlaUI.Adapter.White
+namespace FlaUI.Adapter.White.UIItems
 {
     public static class WhiteAdapter
     {
