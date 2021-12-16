@@ -18,7 +18,7 @@ namespace TestStack.White.UIItems.TableItems
 
         public Bitmap VisibleImage => null; // TODO
 
-        public new List<TableRows> Rows => base.Rows.Cast<TableRows>().ToList();
+        public new List<TableRow> Rows => base.Rows.Cast<TableRow>().ToList();
 
         public void Refresh()
         {
