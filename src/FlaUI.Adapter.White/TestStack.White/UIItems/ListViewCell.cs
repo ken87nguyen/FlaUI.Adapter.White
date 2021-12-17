@@ -1,4 +1,4 @@
-﻿namespace FlaUI.Adapter.White.TestStack.White.UIItems
+﻿namespace TestStack.White.UIItems
 {
     public class ListViewCell
     {

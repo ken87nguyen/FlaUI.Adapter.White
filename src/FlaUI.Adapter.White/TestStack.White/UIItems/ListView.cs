@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using FlaUI.Adapter.White.TestStack.White.UIItems;
 using FlaUI.Core;
 using FlaUI.Core.AutomationElements;
 

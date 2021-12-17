@@ -2,7 +2,7 @@
 using FlaUI.Core;
 using FlaUI.Core.AutomationElements;
 
-namespace FlaUI.Adapter.White.TestStack.White.UIItems
+namespace TestStack.White.UIItems
 {
     public class ListViewRow : ListBoxItem
     {
@@ -16,6 +16,6 @@ namespace FlaUI.Adapter.White.TestStack.White.UIItems
             });
         }
 
-        
+        public string Id => base.AutomationId;
     }
 }
