@@ -17,7 +17,19 @@ namespace TestStack.White.WindowsAPI
             ESCAPE = VirtualKeyShort.ESCAPE,
             CONTROL = VirtualKeyShort.CONTROL,
             SHIFT = VirtualKeyShort.SHIFT,
-            UP = VirtualKeyShort.UP
+            UP = VirtualKeyShort.UP,
+            INSERT = VirtualKeyShort.INSERT,
+            SPACE = VirtualKeyShort.SPACE,
+            ALT = VirtualKeyShort.ALT,
+            F1 = VirtualKeyShort.F1,
+            F5 = VirtualKeyShort.F5,
+            F6 = VirtualKeyShort.F6,
+            F7 = VirtualKeyShort.F7,
+            F8 = VirtualKeyShort.F8,
+            F9 = VirtualKeyShort.F9,
+            F10 = VirtualKeyShort.F10,
+            F11 = VirtualKeyShort.F11,
+            F12 = VirtualKeyShort.F12
         }
     }
 }

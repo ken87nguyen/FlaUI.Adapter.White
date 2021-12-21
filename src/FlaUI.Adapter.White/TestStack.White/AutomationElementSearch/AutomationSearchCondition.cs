@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using FlaUI.Adapter.White.Converters;
 using FlaUI.Adapter.White.UIItems;
 using FlaUI.Core.Conditions;
 using FlaUI.Core.Definitions;
@@ -78,6 +79,12 @@ namespace TestStack.White.AutomationElementSearch
             return automationSearchCondition;
         }
 
+#if !NETSTANDARD
+        public static AutomationSearchCondition ByControlType(System.Windows.Automation.ControlType controlType)
+        {
+            return ByControlType((ControlType)FlaUIControlTypeConverter.ToFlaUIControlType(controlType));
+        }
+#endif
         public static AutomationSearchCondition ByAutomationId(string id)
         {
             var automationSearchCondition = new AutomationSearchCondition();

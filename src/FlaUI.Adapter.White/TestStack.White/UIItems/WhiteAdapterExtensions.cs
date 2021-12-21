@@ -47,6 +47,10 @@ namespace TestStack.White.UIItems
             return Get(element, condition);
         }
 
+        public static AutomationElement GetElement(this AutomationElement element, SearchCriteria searchCriteria) {
+            return element.Get(searchCriteria);
+        }
+
         public static AutomationElement Get(this AutomationElement element, ConditionBase condition)
         {
             var foundElement = element.FindFirstDescendant(condition);
@@ -91,20 +95,29 @@ namespace TestStack.White.UIItems
             return null;
         }
 
-        public static UIItems.WindowItems.Window ModalWindow(this UIItems.WindowItems.Window parent, string title)
+        public static WindowItems.Window ModalWindow(this WindowItems.Window parent, string title)
         {
             var cf = parent.ConditionFactory;
             return parent.FindFirstDescendant(cf.ByControlType(ControlType.Window).And(cf.ByName(title))).AsWindow() as UIItems.WindowItems.Window;
         }
 
-        public static UIItems.WindowItems.Window ModalWindow(this UIItems.WindowItems.Window parent, SearchCriteria searchCriteria)
+        public static WindowItems.Window ModalWindow(this WindowItems.Window parent, SearchCriteria searchCriteria)
         {
-            return parent.Get(searchCriteria.ToCondition()).AsWindow() as UIItems.WindowItems.Window;
+            return parent.Get(searchCriteria.ToCondition()).AsWindow() as WindowItems.Window;
         }
 
-        public static UIItemContainer MdiChild(this UIItems.WindowItems.Window parent, SearchCriteria searchCriteria)
+        public static UIItemContainer MdiChild(this WindowItems.Window parent, SearchCriteria searchCriteria)
         {
             return parent.Get(searchCriteria) as UIItemContainer;
+        }
+
+        public static AutomationElement[] GetMultiple(this WindowItems.Window parent, SearchCriteria searchCriteria) {
+            return parent.FindAllDescendants(searchCriteria.ToCondition());
+        }
+
+        public static AutomationElement[] GetMultiple(this AutomationElement parent, SearchCriteria searchCriteria)
+        {
+            return parent.FindAllDescendants(searchCriteria.ToCondition());
         }
 
         public static ListBox Check(this ListBox listBox, string itemText)

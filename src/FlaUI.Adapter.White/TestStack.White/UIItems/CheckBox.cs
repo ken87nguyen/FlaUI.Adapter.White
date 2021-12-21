@@ -23,5 +23,14 @@ namespace TestStack.White.UIItems
         public bool Enabled => IsEnabled;
 
         public bool IsFocussed => false; // TODO
+
+        public void Select() {
+            // TODO
+        }
+
+        public void UnSelect()
+        {
+            // TODO
+        }
     }
 }

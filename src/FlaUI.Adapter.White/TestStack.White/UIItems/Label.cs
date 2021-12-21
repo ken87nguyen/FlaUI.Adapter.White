@@ -1,4 +1,5 @@
-﻿using FlaUI.Core;
+﻿using System.Drawing;
+using FlaUI.Core;
 
 namespace TestStack.White.UIItems
 {
@@ -9,5 +10,7 @@ namespace TestStack.White.UIItems
         }
 
         public bool Visible => base.IsAvailable;
+        public Rectangle Bounds => base.BoundingRectangle;
+        public bool Enabled => base.IsEnabled;
     }
 }

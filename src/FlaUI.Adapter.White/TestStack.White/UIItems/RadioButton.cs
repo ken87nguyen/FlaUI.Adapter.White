@@ -14,6 +14,8 @@ namespace TestStack.White.UIItems
             set => base.IsChecked = value;
         }
 
+        public bool Enabled => base.IsEnabled;
+
         public void Select()
         {
             Click();

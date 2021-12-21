@@ -46,5 +46,11 @@ namespace TestStack.White
             // TODO HYT 2021.12.15
             return null;
         }
+
+        public static Application Attach(string path)
+        {
+            // TODO HYT 2021.12.15
+            return null;
+        }
     }
 }

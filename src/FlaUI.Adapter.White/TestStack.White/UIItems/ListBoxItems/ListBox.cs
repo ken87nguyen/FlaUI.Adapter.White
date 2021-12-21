@@ -17,6 +17,8 @@ namespace TestStack.White.UIItems.ListBoxItems
             return base.Select(itemText);
         }
 
-        public List<ListBoxItem> Items => base.Items.ToList();
+        public List<ListItem> Items => base.Items.Cast<ListItem>().ToList();
+
+        public string SelectedItemText => base.SelectedItem.Text;
     }
 }

@@ -24,6 +24,13 @@ namespace TestStack.White.Configuration
             set => waitBasedOnHourGlass = value;
         }
 
+        private int findWindowTimeout = 30000;
+        public int FindWindowTimeout
+        {
+            get => findWindowTimeout;
+            set => findWindowTimeout = value;
+        }
+
         private int popupTimeout = 5000;
 
         public int PopupTimeout

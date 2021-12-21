@@ -31,6 +31,13 @@ namespace TestStack.White.UIItems.WindowItems
             }
         }
 
+        //TODO
+        public DisplayState DisplayState
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// Returns a mouse which is associated to this window. 
         /// Any operation performed using the mouse would wait till the window is busy after this operation. 

@@ -10,10 +10,16 @@ namespace TestStack.White.UIItems
         public ListViewRow(FrameworkAutomationElementBase frameworkAutomationElement) : base(frameworkAutomationElement)
         {
             Cells = new List<ListViewCell>();
-            Cells.Add(new ListViewCell
+            Cells.Add(new ListViewCell(frameworkAutomationElement)
             {
                 Text = Text
             });
+        }
+
+        public bool IsKeyboardFocusable => true; //TODO
+        public void MultiSelect()
+        {
+            // TODO: HYT 2021.12.21
         }
 
         public string Id => base.AutomationId;
