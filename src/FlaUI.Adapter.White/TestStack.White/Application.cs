@@ -8,7 +8,6 @@ using TestStack.White.UIItems.WindowItems;
 
 namespace TestStack.White
 {
-    // TODO HYT 2021.12.15
     public class Application : FlaUI.Core.Application
     {
         public Application(int processId, bool isStoreApp = false) : base(processId, isStoreApp)
