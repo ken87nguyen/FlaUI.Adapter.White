@@ -78,12 +78,14 @@ namespace TestStack.White.UIItems
             Keyboard.Press((VirtualKeyShort)key);
         }
 
+        // TODO [#12 | VTQ | Open]
         public static void HoldKey<T>(this T element, KeyboardInput.SpecialKeys key)
         {
             // TODO HYT 2021.12.15
             Keyboard.Press((VirtualKeyShort)key);
         }
 
+        // TODO [#12 | VTQ | Open]
         public static void LeaveKey<T>(this T element, KeyboardInput.SpecialKeys key)
         {
             // TODO HYT 2021.12.15

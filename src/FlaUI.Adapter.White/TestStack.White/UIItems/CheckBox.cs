@@ -2,7 +2,7 @@
 
 namespace TestStack.White.UIItems
 {  
-    // TODO [#4 | VTQ | Open]
+    // TODO [#4 | # | Open]
     public class CheckBox : FlaUI.Core.AutomationElements.CheckBox
     {
         public CheckBox(FrameworkAutomationElementBase frameworkAutomationElement) : base(frameworkAutomationElement)
@@ -21,7 +21,7 @@ namespace TestStack.White.UIItems
             set => IsChecked = value;
         }
 
-        public bool Enabled => IsEnabled;
+        public bool Enabled => base.IsEnabled;
 
         public bool IsFocussed => false; // TODO
 
