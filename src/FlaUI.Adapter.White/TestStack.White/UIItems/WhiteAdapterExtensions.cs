@@ -10,6 +10,7 @@ using TestStack.White.WindowsAPI;
 
 namespace TestStack.White.UIItems
 {
+    // TODO [#12 | # | Open]
     public static class WhiteAdapterExtensions
     {
         public static T Get<T>(this AutomationElement element, string name) where T : AutomationElement

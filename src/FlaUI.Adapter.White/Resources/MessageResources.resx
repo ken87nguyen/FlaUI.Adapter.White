@@ -120,4 +120,7 @@
   <data name="Application_NotFindWindow" xml:space="preserve">
     <value>Can not find window {0}.</value>
   </data>
+  <data name="Common_CanNotFindForThing" xml:space="preserve">
+    <value>Cannot find {0} for {1}.</value>
+  </data>
 </root>

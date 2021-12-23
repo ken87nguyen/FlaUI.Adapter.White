@@ -7,6 +7,7 @@ using TestStack.White.UIItems.Scrolling;
 
 namespace TestStack.White.UIItems
 {
+    // TODO [#8 | # | Open]
     public class ListView : ListBox
     {
         public ListView(FrameworkAutomationElementBase frameworkAutomationElement) : base(frameworkAutomationElement)
@@ -18,6 +19,7 @@ namespace TestStack.White.UIItems
 
         public bool Enabled => base.IsEnabled;
 
+        // TODO
         public Scrolling.ScrollBar ScrollBars
         {
             get;

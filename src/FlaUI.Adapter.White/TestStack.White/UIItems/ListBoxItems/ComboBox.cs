@@ -6,6 +6,7 @@ using FlaUI.Core.AutomationElements;
 
 namespace TestStack.White.UIItems.ListBoxItems
 {
+    // TODO [#18 | # | Open]
     public class ComboBox : FlaUI.Core.AutomationElements.ComboBox
     {
         public ComboBox(FrameworkAutomationElementBase frameworkAutomationElement) : base(frameworkAutomationElement)

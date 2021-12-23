@@ -4,6 +4,7 @@ using FlaUI.Core.AutomationElements.Scrolling;
 
 namespace TestStack.White.UIItems.Scrolling
 {
+    // TODO [#16 | # | Open]
     public class ScrollBar : AutomationElement
     {
         public ScrollBar(FrameworkAutomationElementBase frameworkAutomationElement) : base(frameworkAutomationElement) {
@@ -11,12 +12,14 @@ namespace TestStack.White.UIItems.Scrolling
             Horizontal = new HorizontalScrollBar(frameworkAutomationElement);
         }
 
+        // TODO
         public VerticalScrollBar Vertical
         {
             get;
             private set;
         }
 
+        // TODO
         public HorizontalScrollBar Horizontal
         {
             get;

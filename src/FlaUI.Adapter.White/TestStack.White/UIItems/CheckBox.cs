@@ -1,7 +1,8 @@
 ﻿using FlaUI.Core;
 
 namespace TestStack.White.UIItems
-{
+{  
+    // TODO [#4 | VTQ | Open]
     public class CheckBox : FlaUI.Core.AutomationElements.CheckBox
     {
         public CheckBox(FrameworkAutomationElementBase frameworkAutomationElement) : base(frameworkAutomationElement)

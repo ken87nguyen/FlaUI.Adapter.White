@@ -1,13 +1,13 @@
 ﻿
 using System;
 using System.Drawing;
-using System.Linq;
 using FlaUI.Core;
 using FlaUI.Core.AutomationElements;
 using FlaUI.Core.Exceptions;
 
 namespace TestStack.White.UIItems.TableItems
 {
+    // TODO [#14 | # | Open]
     public class TableCell : GridCell
     {
         private readonly TableRow _tableRow;

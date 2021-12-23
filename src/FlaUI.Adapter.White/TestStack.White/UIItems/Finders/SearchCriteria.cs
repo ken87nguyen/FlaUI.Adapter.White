@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using FlaUI.Adapter.White.Converters;
 using FlaUI.Adapter.White.UIItems;
 using FlaUI.Core.Conditions;
@@ -117,6 +118,13 @@ namespace TestStack.White.UIItems.Finders
 
         public virtual SearchCriteria AndControlType(ControlType controlType)
         {
+            _conditions.Insert(0, ConditionFactory.ByControlType(controlType));
+            return this;
+        }
+
+        public virtual SearchCriteria AndControlType(Type type)
+        {
+            var controlType = SearchConditionFactory.CreateForControlType(type);
             _conditions.Insert(0, ConditionFactory.ByControlType(controlType));
             return this;
         }

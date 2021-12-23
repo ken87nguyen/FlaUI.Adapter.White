@@ -5,6 +5,7 @@ using FlaUI.Core.AutomationElements;
 
 namespace TestStack.White.UIItems.TabItems
 {
+    // TODO [#15 | # | Open]
     public class Tab : FlaUI.Core.AutomationElements.Tab
     {
         public Tab(FrameworkAutomationElementBase frameworkAutomationElement) : base(frameworkAutomationElement)

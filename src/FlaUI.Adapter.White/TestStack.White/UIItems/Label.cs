@@ -3,6 +3,7 @@ using FlaUI.Core;
 
 namespace TestStack.White.UIItems
 {
+    // TODO [#7 | # | Open]
     public class Label : FlaUI.Core.AutomationElements.Label
     {
         public Label(FrameworkAutomationElementBase frameworkAutomationElement) : base(frameworkAutomationElement)

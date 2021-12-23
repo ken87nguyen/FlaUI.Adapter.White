@@ -68,5 +68,14 @@ namespace FlaUI.Adapter.White.Resources {
                 return ResourceManager.GetString("Application_NotFindWindow", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot find {0} for {1}..
+        /// </summary>
+        internal static string Common_CanNotFindForThing {
+            get {
+                return ResourceManager.GetString("Common_CanNotFindForThing", resourceCulture);
+            }
+        }
     }
 }

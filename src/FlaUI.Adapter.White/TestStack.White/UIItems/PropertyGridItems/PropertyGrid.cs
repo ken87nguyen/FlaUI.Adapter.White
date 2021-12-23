@@ -5,6 +5,7 @@ using AutomationElement = FlaUI.Core.AutomationElements.AutomationElement;
 
 namespace TestStack.White.UIItems.PropertyGridItems
 {
+    // TODO [#17 | # | Open]
     public class PropertyGrid : AutomationElement
     {
         public PropertyGrid(FrameworkAutomationElementBase frameworkAutomationElement) : base(frameworkAutomationElement)

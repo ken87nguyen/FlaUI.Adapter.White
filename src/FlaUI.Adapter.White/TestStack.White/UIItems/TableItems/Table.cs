@@ -6,6 +6,7 @@ using FlaUI.Core.AutomationElements;
 
 namespace TestStack.White.UIItems.TableItems
 {
+    // TODO [#13 | # | Open]
     public class Table : Grid
     {
         public Table(FrameworkAutomationElementBase frameworkAutomationElement) : base(frameworkAutomationElement)

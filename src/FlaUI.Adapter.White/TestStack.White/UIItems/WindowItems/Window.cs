@@ -2,11 +2,14 @@
 using System.Drawing;
 using System.Linq;
 using FlaUI.Core;
+using FlaUI.Core.AutomationElements;
 using TestStack.White.InputDevices;
+using TestStack.White.UIItems.Finders;
 using TestStack.White.UIItems.WindowStripControls;
 
 namespace TestStack.White.UIItems.WindowItems
 {
+    // TODO [#2 | HYT | In progress]
     public class Window : FlaUI.Core.AutomationElements.Window
     {
         public Window(FrameworkAutomationElementBase frameworkAutomationElement) : base(frameworkAutomationElement)
@@ -16,12 +19,18 @@ namespace TestStack.White.UIItems.WindowItems
         // TODO HYT 2021.12.15
         public MenuBar MenuBar { get; set; }
 
+        // TODO HYT 2021.12.15
         public List<Window> ModalWindows()
         {
             return base.ModalWindows.Cast<Window>().ToList();
         }
 
         public Rectangle Bounds => BoundingRectangle;
+
+        public T Get<T>(SearchCriteria searchCriteria) where T : AutomationElement
+        {
+            return (T)this.Get(searchCriteria.AndControlType(typeof(T)));
+        }
 
         public virtual AttachedKeyboard Keyboard
         {

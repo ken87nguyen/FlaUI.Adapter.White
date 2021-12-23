@@ -4,6 +4,7 @@ using FlaUI.Core.AutomationElements;
 
 namespace TestStack.White.UIItems
 {
+    // TODO [#9 | # | Open]
     public class ListViewRow : ListBoxItem
     {
         public List<ListViewCell> Cells { get; set; }
