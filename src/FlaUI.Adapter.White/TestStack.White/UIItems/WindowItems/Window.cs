@@ -29,7 +29,8 @@ namespace TestStack.White.UIItems.WindowItems
 
         public T Get<T>(SearchCriteria searchCriteria) where T : AutomationElement
         {
-            return (T)this.Get(searchCriteria.AndControlType(typeof(T)));
+            var element = this.Get(searchCriteria.AndControlType(typeof(T), this.Automation));
+            return SearchControlFactory.CreateForControl<T>(element);
         }
 
         public virtual AttachedKeyboard Keyboard

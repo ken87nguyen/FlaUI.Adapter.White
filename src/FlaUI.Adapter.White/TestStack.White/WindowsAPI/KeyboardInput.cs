@@ -29,7 +29,8 @@ namespace TestStack.White.WindowsAPI
             F9 = VirtualKeyShort.F9,
             F10 = VirtualKeyShort.F10,
             F11 = VirtualKeyShort.F11,
-            F12 = VirtualKeyShort.F12
+            F12 = VirtualKeyShort.F12,
+            KEY_A = VirtualKeyShort.KEY_A
         }
     }
 }

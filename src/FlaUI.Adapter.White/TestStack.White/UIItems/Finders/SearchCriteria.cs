@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using FlaUI.Adapter.White.Converters;
 using FlaUI.Adapter.White.UIItems;
+using FlaUI.Core;
 using FlaUI.Core.Conditions;
 using FlaUI.Core.Definitions;
 using FlaUI.Core.Identifiers;
@@ -122,10 +123,10 @@ namespace TestStack.White.UIItems.Finders
             return this;
         }
 
-        public virtual SearchCriteria AndControlType(Type type)
+        public virtual SearchCriteria AndControlType(Type type, AutomationBase automationBase)
         {
-            var controlType = SearchConditionFactory.CreateForControlType(type);
-            _conditions.Insert(0, ConditionFactory.ByControlType(controlType));
+            WhiteAdapter.Initialize(automationBase);
+            _conditions.Insert(0, ConditionFactory.ByControlType(SearchConditionFactory.CreateForControlType(type)));
             return this;
         }
 

@@ -68,6 +68,11 @@ namespace TestStack.White.UIItems
             Keyboard.Type(text);
         }
 
+        public static void Enter(this AutomationElement element, string text)
+        {
+            SearchControlFactory.EnterByControl(element, text);
+        }
+
         public static void KeyIn<T>(this T element, KeyboardInput.SpecialKeys key)
         {
             Keyboard.Press((VirtualKeyShort)key);
